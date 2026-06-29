@@ -1,0 +1,26 @@
+
+name: 'Marketing_Data_Platform'
+version: '1.0'
+profile: 'default'
+
+model-paths: ["models"]
+
+models:
+  Marketing_Data_Platform:
+
+    staging:
+      +materialized: view
+
+    intermediate:
+      +materialized: view
+
+    marts:
+      +materialized: table
+
+    performance_platform:
+      staging:
+        +materialized: view
+      intermediate:
+        +materialized: view
+      marts:
+        +materialized: table

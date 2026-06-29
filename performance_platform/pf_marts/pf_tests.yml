@@ -1,0 +1,65 @@
+
+version: 2
+
+models:
+
+  - name: pf_fct_campaign_performance
+    description: Final campaign performance metrics
+    columns:
+      - name: campaign_id
+        tests:
+          - not_null
+
+      - name: source_name
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - meta
+                  - google
+
+      - name: total_spend
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null
+
+
+  - name: pf_fct_customer_acquisition
+    description: Customer acquisition metrics (CAC)
+    columns:
+      - name: campaign_id
+        tests:
+          - not_null
+
+      - name: total_customers
+        tests:
+          - not_null
+
+      - name: cac
+        tests:
+          - not_null
+
+
+  - name: pf_fct_channel_performance
+    description: Channel-level performance
+    columns:
+      - name: source_name
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - meta
+                  - google
+
+      - name: total_spend
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null
